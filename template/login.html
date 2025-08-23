@@ -1,0 +1,36 @@
+ {% include 'LoginHeader.html' %}
+<html lang="en">
+<body>
+<form id="form1" name="form1" method="post" action="/login1" align="center">
+
+  <table align="center" width="200" border="0" >
+    <tr>
+      <td colspan="1" align="right">
+        <h2 >LOGIN</h2>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <th>Username</th>
+      <td><label for="uname"></label>
+      <input type="text" name="un" id="uname" align="center" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Password</th>
+      <td><label for="passwd"></label>
+      <input type="password" name="pass" id="passwd" align="center" class="form-control" required/></td>
+    </tr>
+    <tr>
+
+      <td><input  name="login" type="submit" id="login" value="Login" align="right" class="primary-btn"/></td>
+
+
+    </tr>
+  </table>
+{% include 'LoginFooter.html' %}
+</form>
+
+</body>
+</html>

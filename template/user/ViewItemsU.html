@@ -1,0 +1,65 @@
+{% include 'user/UserPageHeader.html' %}
+<head>
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 15px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+        .card h3, .card p {
+            margin: 10px 0;
+        }
+        .card a {
+            text-decoration: none;
+            color: brown;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        /* Center Align the Heading */
+        .page-heading {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="page-heading">View Items</h3>
+    <div class="card-container">
+        {% for row in data %}
+        <div class="card">
+            <img src="../static/image/{{ row['model'] }}" alt="{{ row['name'] }}">
+            <h3>{{ row['name'] }}</h3>
+            <p><strong>Description:</strong> {{ row['item_description'] }}</p>
+            <p><strong>Price:</strong> ₹{{ row['price'] }}</p>
+            <p><strong>Category:</strong> {{ row['category'] }}</p>
+            <p><strong>Expiry Date:</strong> {{ row['expiry_date'] }}</p>
+            <a href="/LinkAddToCart?id={{ row['iditem_details'] }}&p={{ row['price'] }}&img={{ row['img_path'] }}">Add to Cart</a>
+            <br>
+            <a href="/view_image_user?id={{ row['img_path'] }}">Certificate</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+
+{% include 'LoginFooter.html' %}

@@ -1,0 +1,109 @@
+ {% include 'LoginHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+<h2 align="center">Add Manufacture </h2>
+<form id="form1" name="form1" method="post" action="AddDistributor" enctype = "multipart/form-data">
+
+        <table width="318" border="0" id="cs" align="center">
+            <tr>
+                <th>Manufacture id</th>
+                <td>
+                    <label>
+                        <input type="text" name="TxtDid" required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+
+
+            <tr>
+                <th>Name</th>
+                <td>
+                    <label>
+                        <input type="text" name="TxtName" required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Address</th>
+                <td>
+                    <label>
+                        <textarea name="TxtAddress" class="form-control" required></textarea>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>
+                    <label>
+                        <input type="text" class="form-control" name="TxtPhone" required pattern="[6-9]{1}[0-9]{9}" title="incorrect phone no"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>
+                    <label>
+                        <input type="email" class="form-control" name="TxtEmail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                    </label>
+                </td>
+            </tr>
+
+<tr>
+
+                <td>Photo</td>
+                <td>
+                    <label>
+                        <input type="file" name="TxtPhoto" required />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>
+                    <label>
+                        <input type="password" name="TxtPassword" class="form-control" required />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit" class="section-btn"/>
+                    </label>
+                </td>
+
+        </table>
+
+</form>
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}

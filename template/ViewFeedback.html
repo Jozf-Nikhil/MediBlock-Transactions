@@ -1,0 +1,118 @@
+{% include 'AdminPageHeader.html' %}
+ <head>
+    <style>
+        /* General Styling */
+        body {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #5a5a5a;
+        }
+
+        /* Table Styling */
+        #cs {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #cs th, #cs td {
+            text-align: center;
+            padding: 15px;
+        }
+
+        #cs th {
+            background-color: #007bff;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        #cs tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #cs tr:hover {
+            background-color: #e0f7fa;
+        }
+
+        #cs td img {
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #cs a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        #cs a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        /* Payment Button */
+        .payment {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .payment a {
+            text-decoration: none;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+        }
+
+        .payment a:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>View Feedback</h2>
+    <table id="cs">
+        <tr>
+            <th>Sl.No</th>
+            <th>User</th>
+            <th>Feedback</th>
+            <th>Date</th>
+            <th> </th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ row['user_id'] }}</td>
+            <td>{{ row['feedback_details'] }}</td>
+            <td>{{ row['feedback_date'] }}</td>
+
+
+
+        </tr>
+        {% endfor %}
+
+
+    </table>
+
+<!--    <div class="payment">-->
+<!--        <a href="/card_link">Proceed to Payment</a>-->
+<!--    </div>-->
+</body>
+
+{% include 'LoginFooter.html' %}

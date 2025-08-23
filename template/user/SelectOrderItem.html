@@ -1,0 +1,54 @@
+{% include 'user/UserPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+
+
+          <h2>Modify Cart</h2>
+<form id="form1" name="form1" method="post" action="/EditCart" >
+    <table id="cs">
+<tr>
+      <input type="hidden" name="id" id="dd"value="{{ data['order_item_id'] }}" required/>
+    </tr>
+        <tr><th> </th><td> </td></tr>
+         <tr><th>Item Name</th><td>{{ data['name'] }}</td></tr>
+
+        <tr><th>Quantity</th><td><input name="TxtQuantity" type="number" value="{{ data['quantity'] }}" required min="0" max="12" ></td></tr>
+
+
+
+        <tr>
+            <th> <input type="submit" value="Update"  class="primary-btn" /></th>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}

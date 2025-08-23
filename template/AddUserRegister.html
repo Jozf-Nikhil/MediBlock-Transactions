@@ -1,0 +1,122 @@
+ {% include 'LoginHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+<h2 align="center">User Register</h2>
+<form id="form1" name="form1" method="post" action="UserRegister">
+
+        <table width="318" border="0" id="cs" align="center">
+            <tr>
+                <th>User id</th>
+                <td>
+                    <label>
+                        <input type="text" name="TxtUserid" required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+
+
+            <tr>
+                <th>Name</th>
+                <td>
+                    <label>
+                        <input type="text" name="TxtName" required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Address</th>
+                <td>
+                    <label>
+                        <textarea name="TxtAddress" class="form-control" required></textarea>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>
+                    <label>
+                        <input type="text" class="form-control" name="TxtPhone" required pattern="[6-9]{1}[0-9]{9}" title="incorrect phone no"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>
+                    <label>
+                        <input type="email" class="form-control" name="TxtEmail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                    </label>
+                </td>
+            </tr>
+
+
+            <tr>
+                <th>Password</th>
+                <td>
+                    <label>
+                        <input type="password" name="TxtPassword" class="form-control" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" id="password"/>
+                    </label>
+                </td>
+            </tr>
+             <tr>
+                <th>ConfirmPassword</th>
+                <td>
+                    <label>
+                        <input type="password" name="password_confirm" class="form-control" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" id="password_confirm" oninput="check(this)"/>
+                    </label>
+                </td>
+            </tr>
+
+<script language='javascript' type='text/javascript'>
+    function check(input) {
+        if (input.value != document.getElementById('password').value) {
+            input.setCustomValidity('Password Must be Matching.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
+</script>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit" class="primary-btn"/>
+                    </label>
+                </td>
+
+        </table>
+
+</form>
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}

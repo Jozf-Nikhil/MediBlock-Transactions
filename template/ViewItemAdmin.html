@@ -1,0 +1,55 @@
+{% include 'AdminPageHeader.html' %}
+<head>
+    <style>
+         #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+
+<h2>View Medicine</h2>
+<table id="cs">
+    <tr>
+        <th>Sl.No</th>
+        <th>Name</th>
+        <th>Item Description</th>
+        <th>Price</th>
+        <th>Manufacturer</th>
+        <th>Certificate</th>
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <td height="87"><div align="center">{{loop.index }}</div></td>
+      <td><div align="center">{{ row['name'] }}</div></td>
+      <td><div align="center">{{ row['item_description'] }}</div></td>
+      <td><div align="center">{{ row['price'] }}</div></td>
+      <td><div align="center">{{ row['name'] }}</div></td>
+       <td><img height="200" width="200" src="../static/image/{{ row['img_path'] }}" alt="dfgd"></td>
+       <td width="80"><div align="center" ><a style="color:brown" href="/DeleteItem?id={{ row['iditem_details'] }}">Delete</a></div></td>
+      <td width="80"><div align="center" ><a style="color:brown" href="/approve_item_link?id={{ row['iditem_details'] }}">Approve</a></div></td>
+
+         </tr>
+
+        {% endfor %}
+
+
+</table>
+{% include 'LoginFooter.html' %}

@@ -1,0 +1,55 @@
+{% include 'user/UserPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+
+
+          <h2>Send Feedback</h2>
+<form id="form1" name="form1" method="post" action="/send_feedback" >
+    <table id="cs">
+<tr>
+
+    </tr>
+        <tr><th> </th><td> </td></tr>
+
+
+        <tr><th>Feedback</th><td><textarea name="txtFeed" required ></textarea></td></tr>
+
+
+
+        <tr>
+            <td></td>
+            <th> <input type="submit" value="Submit"  class="primary-btn" /></th>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}

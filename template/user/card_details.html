@@ -1,0 +1,86 @@
+ {% include 'user/UserPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+<h3 align="center">Card Details</h3>
+<form id="form1" name="form1" method="post" action="card_action">
+
+        <table width="318" border="0" id="cs" align="center">
+            <tr><th align="center"><img height="200" width="200" src="../static/image/pay.jpg" alt="dfgd"></th></tr>
+            <tr>
+                <th>Card No</th>
+                <td>
+                    <label>
+                        <input type="text" name="txt_card_no" required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <th>CVV</th>
+                <td>
+                    <label>
+                        <input type="text" name="txt_cvv" required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>Expiry Year</th>
+                <td>
+                    <label>
+                        <input type="text" name="txt_year" required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+
+               <tr>
+                <th>Card Holder Name</th>
+                <td>
+                    <label>
+                        <input type="text" name="txt_name" required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit" class="primary-btn"/>
+                    </label>
+                </td>
+
+        </table>
+
+</form>
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}

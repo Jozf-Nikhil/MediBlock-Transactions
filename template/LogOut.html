@@ -1,0 +1,17 @@
+ {% include 'LoginHeader.html' %}
+<html>
+<head>
+
+    <script>
+
+        function disableBackButton() {
+            window.history.forward();
+        }
+
+    </script>
+</head>
+<body onunload="disableBackButton()" onload="disableBackButton()">
+<h3 align="center" > Are You Sure Want To <a href="Login" style="color:skyblue" ><b>LogOut</b></a> </h3>
+</body>
+</html>
+{% include 'LoginFooter.html' %}

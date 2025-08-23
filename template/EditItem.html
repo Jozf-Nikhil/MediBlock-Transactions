@@ -1,0 +1,84 @@
+{% include 'AdminPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+<h2 align="center">Edit Medicine</h2>
+<form id="form1" name="form1" method="post" action="EditItem">
+
+        <table width="318" border="0" id="cs" align="center">
+            <input type="hidden" name="id" id="dd" value="{{ data['iditem_details'] }}">
+            <tr>
+                <th>Name</th>
+                <td>
+                    <label>
+                        <input type="text" name="TxtName" value="{{ data['name'] }}" required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Medicine Description</th>
+                <td>
+                    <label>
+                        <textarea name="TxtDescription" class="form-control" required>{{ data['item_description'] }}">{{ data['item_description'] }}</textarea>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>
+                    <label>
+                        <input type="number" class="form-control" value="{{ data['price'] }}" name="TxtPrice" required/>
+                    </label>
+                </td>
+            </tr>
+              <tr>
+                <th>Batch No </th>
+                <td>
+                    <label>
+                        <input type="text" name="TxtModel" value="{{ data['model'] }}"required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit" class="section-btn"/>
+                    </label>
+                </td>
+
+        </table>
+
+</form>
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}

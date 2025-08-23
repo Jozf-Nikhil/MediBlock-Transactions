@@ -1,0 +1,53 @@
+{% include 'AdminPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+        }
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+<h2 align="center">Register Category</h2>
+<form id="form1" name="form1" method="post" action="registerCategory">
+
+        <table width="318" border="0" id="cs" align="center">
+
+
+            <tr>
+                <th>Category Name</th>
+                <td>
+                    <label>
+                        <input type="text" name="Category" required class="form-control"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit" class="section-btn"/>
+                    </label>
+                </td>
+
+        </table>
+
+</form>
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}
